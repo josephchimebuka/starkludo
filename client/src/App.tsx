@@ -14,7 +14,7 @@ import "react-simple-flex-grid/lib/main.css";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { OptionsProps } from "./types";
-import "./App.css";
+// import "./App.css";
 import Control from "./components/Control";
 import { StarknetProvider } from "./starknet-provider";
 import { FiAlertTriangle, FiZap } from "react-icons/fi";
@@ -31,6 +31,9 @@ import MobileResponsiveWarning from "./components/MobileResponsiveWarning";
 import { StarkludoSchemaType } from "./dojo/gen/models.gen";
 import { SDK } from "@dojoengine/sdk";
 import Settings from "./components/Settings";
+import GamePlay from "./components/GamePlay.js";
+import LudoGame from "./components/LudoGame.jsx";
+import { GameProvider } from "./context/game-context-2..js";
 
 const App = ({ sdk }: { sdk: SDK<StarkludoSchemaType> }) => {
   console.log("SDK initialized:", sdk);
@@ -84,8 +87,7 @@ const App = ({ sdk }: { sdk: SDK<StarkludoSchemaType> }) => {
     if (options.gameIsOngoing) {
       if (options.winners.length === options.playersLength - 1) {
         toast(
-          `The game has ended. Player ${
-            chance[options.winners[0]]
+          `The game has ended. Player ${chance[options.winners[0]]
           } is the winner`
         );
         setGameOptions({
@@ -130,7 +132,7 @@ const App = ({ sdk }: { sdk: SDK<StarkludoSchemaType> }) => {
                       setGameOptions: setGameOptions,
                     }}
                   >
-                    <BoardContext.Provider value={{ board, toggleBoard }}>
+                    {/* <BoardContext.Provider value={{ board, toggleBoard }}>
                       <ColorProvider>
                         <DiceProvider>
                           <div className="game-behaviour-warning">
@@ -155,7 +157,7 @@ const App = ({ sdk }: { sdk: SDK<StarkludoSchemaType> }) => {
                                           <Header />
                                         </div>
                                         <Menu />
-                                        {/* <RestartGame /> */}
+                                       
                                         <Alert />
                                         <Dice />
                                         {activeWindow === "account" ? (
@@ -227,7 +229,11 @@ const App = ({ sdk }: { sdk: SDK<StarkludoSchemaType> }) => {
                           <Footer />
                         </DiceProvider>
                       </ColorProvider>
-                    </BoardContext.Provider>
+                    </BoardContext.Provider> */}
+                    <GameProvider>
+                      <GamePlay />
+                    </GameProvider>
+                    {/* <LudoGame /> */}
                   </GameContext.Provider>
                   <ToastContainer position="bottom-center" />
                 </StarknetProvider>
