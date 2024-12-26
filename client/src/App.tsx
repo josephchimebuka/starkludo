@@ -31,12 +31,12 @@ import MobileResponsiveWarning from "./components/MobileResponsiveWarning";
 import { StarkludoSchemaType } from "./dojo/gen/models.gen";
 import { SDK } from "@dojoengine/sdk";
 import Settings from "./components/Settings";
+import ToolboxPage from "./components/Toolbox";
 import GamePlay from "./components/GamePlay.js";
 import LudoGame from "./components/LudoGame.jsx";
 import { GameProvider } from "./context/game-context-2..js";
 
 const App = ({ sdk }: { sdk: SDK<StarkludoSchemaType> }) => {
-  console.log("SDK initialized:", sdk);
 
   const [activeWindow, setActiveWindow] = useState("");
   const [showMobileResponsiveWarning, setShowMobileResponsiveWarning] =
