@@ -32,6 +32,7 @@ import { StarkludoSchemaType } from "./dojo/gen/models.gen";
 import { SDK } from "@dojoengine/sdk";
 import Settings from "./components/Settings";
 import ToolboxPage from "./components/Toolbox";
+import { AvatarProvider } from "./context/avatar-context";
 
 const App = ({ sdk }: { sdk: SDK<StarkludoSchemaType> }) => {
 
@@ -126,6 +127,7 @@ const App = ({ sdk }: { sdk: SDK<StarkludoSchemaType> }) => {
                 <BoardContext.Provider value={{ board, toggleBoard }}>
                   <ColorProvider>
                     <DiceProvider>
+                    <AvatarProvider>
                       <Routes>
                         <Route
                           path="/color-settings"
@@ -241,6 +243,7 @@ const App = ({ sdk }: { sdk: SDK<StarkludoSchemaType> }) => {
                           }
                         />
                       </Routes>
+                     </AvatarProvider> 
                     </DiceProvider>
                   </ColorProvider>
                 </BoardContext.Provider>
