@@ -1252,8 +1252,8 @@
   },
   "contracts": [
     {
-      "address": "0x6b240e9a9239294ed1d07ff08ee8b1f32d9a2a87c782a7729965e7dabb486a9",
-      "class_hash": "0x6716e4b768301e39402a2fe2171dd9813bad8a82077c5039b8d0643859dcd55",
+      "address": "0x1fadb4983842c567c473e49695bbb4faec47c36472bb151c71f8d5fa26b96d3",
+      "class_hash": "0x689cceee0dc7a0dfda4f32873aaba41293dc785cb36bef032af726a10f1ad8c",
       "abi": [
         {
           "type": "impl",
@@ -1389,7 +1389,11 @@
               "type": "function",
               "name": "roll",
               "inputs": [],
-              "outputs": [],
+              "outputs": [
+                {
+                  "type": "(core::integer::u8, core::integer::u8)"
+                }
+              ],
               "state_mutability": "external"
             },
             {
