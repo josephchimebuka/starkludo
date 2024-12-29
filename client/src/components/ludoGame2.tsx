@@ -48,7 +48,7 @@ const LudoGame = () => {
                     {/* Top Row */}
                     <div className="flex w-full">
                         <PlayerZone
-                            highlighted={players[1].isTurn}
+                            hightlighed={players[1].isTurn}
                             noofPieces={players[1].noOfPieces}
                             backgroundColor="#545841"
                             borderColor="#3f4231"
@@ -65,7 +65,7 @@ const LudoGame = () => {
                             </div>
                         </div>
                         <PlayerZone
-                            highlighted={players[0].isTurn}
+                            hightlighed={players[0].isTurn}
                             noofPieces={players[0].noOfPieces}
                             backgroundColor="#626b74"
                             borderColor="#4a5057"
@@ -107,7 +107,7 @@ const LudoGame = () => {
                     {/* Bottom Row */}
                     <div className="flex w-full">
                         <PlayerZone
-                            highlighted={players[3].isTurn}
+                            hightlighed={players[3].isTurn}
                             noofPieces={players[3].noOfPieces}
                             backgroundColor="#973d34"
                             borderColor="#712e27"
@@ -124,7 +124,7 @@ const LudoGame = () => {
                             </div>
                         </div>
                         <PlayerZone
-                            highlighted={players[2].isTurn}
+                            hightlighed={players[2].isTurn}
                             noofPieces={players[2].noOfPieces}
                             backgroundColor="#c89252"
                             borderColor="#966e3d"

@@ -24,7 +24,9 @@ const CenterTile: React.FC<CenterTileProps> = ({ color, width, height }) => {
                         className="border h-[75px] w-[107px] overflow-none bg-white border-[#5cd7f8] flex items-center justify-center relative"
 
                     >
-                        <Dice />
+                        <Dice onRoll={function (numbers: number[]): void {
+                            throw new Error('Function not implemented.');
+                        } } />
                     </div>
                     <HighlightedDiv className="border h-1/4 bg-[#973d34] border-[#5cd7f8]"></HighlightedDiv>
                 </div>

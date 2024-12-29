@@ -7,7 +7,7 @@ interface DiceProps {
 }
 
 const Dice: React.FC<DiceProps> = ({ onRoll, controlledValues }) => {
-  const { players, setPlayerTurn, currentTurn, rolledNumber1, rolledNumber2 } = useGame();
+  const { players, currentTurn, rolledNumber1, rolledNumber2 } = useGame();
   const [dice1, setDice1] = useState(1);
   const [dice2, setDice2] = useState(1);
   const dice1Ref = useRef<HTMLDivElement | null>(null);
@@ -45,7 +45,7 @@ const Dice: React.FC<DiceProps> = ({ onRoll, controlledValues }) => {
   // };
 
   const getDotPositions = (num: number) => {
-    const positions = {
+    const positions: { [key: number]: [number, number][] } = {
       1: [[1, 1]],
       2: [
         [0, 0],
@@ -78,7 +78,7 @@ const Dice: React.FC<DiceProps> = ({ onRoll, controlledValues }) => {
         [2, 2],
       ],
     };
-    return positions[num];
+    return positions[num as keyof typeof positions];
   };
 
   const dots1 = getDotPositions(rolledNumber1);
